@@ -1,0 +1,51 @@
+<app-header></app-header>
+<app-back-button></app-back-button>
+
+<div class="container">
+  <h1>Link Account </h1>
+
+  <div *ngIf="user">
+    <mat-list>
+      <mat-list-item>
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          <h3 mat-line>User id : {{user.id}}</h3>
+          <h3 mat-line>{{user.name}} {{user.surname}}</h3>
+          <p mat-line>{{user.email}}</p>
+      </mat-list-item>
+    </mat-list>
+
+
+   
+
+    <form  *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)="f.form.valid && linkBankAccount() "
+    #f="ngForm"
+    novalidate>
+
+       {{errorMessage}}
+
+      
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>account numnber</mat-label>
+          <input name="accountNumber" [(ngModel)]="form.accountNumber"
+          required   #accountNumber="ngModel"  matInput type="number" class="example-right-align" placeholder="0" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>account type</mat-label>
+          <input name="userId" [(ngModel)]="form.userId"
+          required   #userId="ngModel"  matInput type="text" class="example-right-align" placeholder="0" autocomplete="off">
+        </mat-form-field>
+
+
+
+      <div>
+        <button type="submit" mat-flat-button color="warn" style="width : 29em;" >
+          Link account
+        </button>
+      </div>
+    </form>
+
+   
+</div>

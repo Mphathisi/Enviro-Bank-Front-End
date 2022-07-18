@@ -1,0 +1,88 @@
+.mat-bottom-sheet-container {
+    min-width: 384px;
+    max-width: calc(100vw - 128px)
+  }
+
+
+  .demo-dialog-card {
+    max-width: 405px;
+    margin: 20px 0;
+  }
+  
+  .mat-raised-button {
+    margin-right: 5px;
+  }
+
+  .example-form {
+    min-width: 900px;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+  .app-name {
+    padding-left: 80px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+  }
+  .app-name-name {
+    color: black;
+    font-size: 90px;
+    font-family: "IBM Plex Sans";
+    font-weight: 1000;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: left;
+  }
+  
+  .app-name-tag {
+    color: #808080;
+    font-size: 36px;
+    font-family: "IBM Plex Mono";
+    font-weight: 600;
+  }
+  
+  .example-container{
+    text-align: center
+}
+
+.form-container{
+    width: 400px; 
+    margin: 0px auto; 
+    ////margin-top: 200px
+   // margin-top: auto;
+}
+
+.form-field{
+    display: block
+}
+
+mat-button {
+    width: 50px;
+}
+
+.app-login-text{
+    color: #808080;
+    font-size: 18px;
+    font-family: "IBM Plex Mono";
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }

@@ -1,0 +1,141 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@500&family=Inter&display=swap");
+app {
+  text-align: center;
+  height: 100vh;
+}
+html,
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color:  #f9f9f9;;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+
+
+
+}
+.flex-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar.mat-primary {
+    background-color: #4267B2;
+    
+    
+}
+
+.mat-toolbar.mat-primary .mat-toolbar-row {
+  height: 64px;
+}
+.mat-icon{
+  font-size: 20px;
+  color: #cacaca;
+  border-radius: 10%;
+}
+
+.custom-width {
+  width: auto;
+  height: 80%;
+}
+
+
+.mat-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+
+
+
+
+.Toastify__toast {
+  font-family: "IBM Plex Sans" !important;
+}
+
+.timer-container {
+  margin: auto 0;
+  font-size: 60px;
+  padding-left: 40px;
+  width: 100px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cacaca;
+}
+
+/* grip */
+::-webkit-scrollbar-thumb {
+  background: #b2b1b1;
+  border-radius: 4px
+}
+
+/* grip on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #292929;
+}
+
+
+.mat-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mat-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+
+.app-name {
+  padding-left: 80px;
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+.app-name-name {
+  color: black;
+  font-size: 90px;
+  font-family: "IBM Plex Sans";
+  font-weight: 1000;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+.app-name-tag {
+  color: #808080;
+  font-size: 36px;
+  font-family: "IBM Plex Mono";
+  font-weight: 600;
+}
+
+.header-app-name {
+  color: #fff;
+  font-family: "IBM Plex Mono";
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+

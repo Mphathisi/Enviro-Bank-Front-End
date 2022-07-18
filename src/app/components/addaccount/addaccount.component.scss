@@ -1,0 +1,93 @@
+
+  .example-form {
+    min-width: 900px;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  
+
+  .mat-form-field {
+    font-size: 14px;
+  }
+  .container{
+  
+    width: 400px; 
+    margin: 0px auto; 
+    ////margin-top: 200px
+   // margin-top: auto;
+    
+  }
+  
+  .example-container{
+    text-align: center
+}
+
+
+
+.form-field{
+    display: block;
+    width: 400px;
+
+}
+
+mat-button {
+    width: 50px;
+}
+
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+
+  .mat-form-field {
+    margin-top: 16px;
+  }
+
+
+  .example-container{
+    text-align: center
+}
+
+  
+    .form-container{
+      width: 400px; 
+      margin: 0px auto; 
+      ////margin-top: 200px
+    // margin-top: auto;
+  }
+
+.form-field{
+    display: block
+    
+}
+
+mat-button {
+    width: 50px;
+}
+
+.app-login-text{
+    color: #808080;
+    font-size: 18px;
+    font-family: "IBM Plex Mono";
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }

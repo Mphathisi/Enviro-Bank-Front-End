@@ -1,0 +1,54 @@
+
+
+//new 
+
+
+.example-container{
+    text-align: center
+}
+
+.form-container{
+    width: 400px; 
+    margin: 0px auto; 
+    ////margin-top: 200px
+   // margin-top: auto;
+}
+
+.form-field{
+    display: block
+}
+
+mat-button {
+    width: 50px;
+}
+
+.app-login-text{
+    color: #808080;
+    font-size: 18px;
+    font-family: "IBM Plex Mono";
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+   
+  .spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-top-color: #000000;
+    animation: spinner .8s linear infinite;
+  }
+

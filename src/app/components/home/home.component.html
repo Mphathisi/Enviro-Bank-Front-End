@@ -1,0 +1,63 @@
+<app-header>
+
+</app-header>
+
+
+
+<div class="example-container">
+    
+    <div class="form-container ">
+        <div class="form-container-header app-login-text">
+            <p class="form-container-header-text ">
+                <span class="form-container-header-text-span">
+                    List of users
+                </span>
+            </p>
+        </div>
+        
+        <div class="form-container-body">
+  
+          <form #form="ngForm">
+            <mat-form-field >
+              <input matInput placeholder="Search" maxlength="8" minlength="5" required
+                     #name autocomplete="off">
+            </mat-form-field>
+            <button mat-icon-button type="submit" color="accent" aria-label="Save name">
+                <mat-icon>search</mat-icon>
+              </button>
+          </form>
+
+
+          <mat-card>
+    
+            <div  class="list-wrapper" ng-app="app" ng-controller="MainCtrl as ctrl">
+              <ul *ngFor="let bankaccount of bankaccounts" class="list">
+                <li class="list-item" (click) = "accountDetails(bankaccount.bank_account_id)">
+                  <div>
+                    <img width="46" alt="Angular Logo" style="margin-bottom: 29px"
+                    src="/assets/avatar.png"
+                  >
+                  </div>
+                  <div class="list-item-content" >
+                    <h4> Account Number {{bankaccount.accountNumber}}</h4>
+                    <p>Balance R:{{bankaccount.availableBalance}}</p>
+                  </div>
+                </li>
+                <div class="button" (click)="transfer(bankaccount.bank_account_id)"  >
+                  Transfer
+                </div>
+              </ul>
+            </div>
+            
+            <mat-paginator [length]="100"
+                          [pageSize]="10"
+                          [pageSizeOptions]="[5, 10, 25, 100]"
+                          aria-label="Select page">
+            </mat-paginator>
+            
+            </mat-card>
+
+    </div>
+  </div>
+  
+<app-footer></app-footer>

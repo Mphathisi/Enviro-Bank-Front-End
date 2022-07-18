@@ -1,0 +1,72 @@
+<div class="app-name">
+    <p class="app-name-name login-header">
+        <span class="app-name-name-span">Enviro Bank</span>
+    </p>
+</div>
+<div class="app-login">  
+        <p class="app-name-tag">
+            <span class="app-name-tag-span">
+                -HELPING You Make Smart Financial Choices-
+            </span> 
+        </p>
+</div>
+
+<div class="example-container">
+    
+    <div class="form-container ">
+        <div class="form-container-header app-login-text">
+            <p class="form-container-header-text ">
+                <span class="form-container-header-text-span">
+                    Add new client
+                </span>
+            </p>
+        </div>
+        <div class="form-container-body">
+          
+
+      <form *ngIf="!isSuccessful"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate >
+
+        <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Name </mat-label>
+            <input  name="name"
+            [(ngModel)]="form.name"
+            required matInput  #name="ngModel" type="text" placeholder="Mphathisi" autocomplete="off">
+          </mat-form-field>
+
+        <mat-form-field  class="form-field" appearance="fill">
+            <mat-label>Surname</mat-label>
+            <input name="surname" [(ngModel)]="form.surname"
+            required
+            surname
+            #surname="ngModel" matInput type="text"  placeholder="Dayimani" autocomplete="off">
+          </mat-form-field>
+
+
+          <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+            <mat-label>ID Number</mat-label>
+            <input name="idNumber" [(ngModel)]="form.idNumber"
+            required
+            #idNumber="ngModel" matInput type="number"  placeholder="0" autocomplete="off">
+          </mat-form-field>
+
+
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>E-Mail</mat-label>
+            <input name="email"
+            [(ngModel)]="form.email"
+            required
+            email
+            #email="ngModel" type="email" matInput placeholder="mphathisi@enviro.com">
+          </mat-form-field>
+        <button type="submit"  mat-flat-button color="warn" style="width : 29em;">Add new client</button>
+
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+          Signup failed!<br />{{ errorMessage }}
+        </div>
+      </form>
+    </div>
+  </div>

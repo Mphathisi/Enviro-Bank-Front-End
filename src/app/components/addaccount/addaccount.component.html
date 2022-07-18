@@ -1,0 +1,52 @@
+<app-header></app-header>
+<app-back-button></app-back-button>
+
+<div class="container">
+  <h1>Add Account </h1>
+
+
+  <div *ngIf="user">
+    <mat-list>
+      <mat-list-item>
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          <h3 mat-line>{{user.name}} {{user.surname}}</h3>
+          <p mat-line>{{user.email}}</p>
+      </mat-list-item>
+    </mat-list>
+ 
+    <form  *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)="f.form.valid && addAccount() "
+    #f="ngForm"
+    novalidate>
+     
+      <mat-form-field  class="form-field" appearance="fill">
+          <mat-label>Choose account type</mat-label>
+          <mat-select [(value)]="form.accountType">
+            <mat-option>None</mat-option>
+            <mat-option value="SAVINGS">Savings Account</mat-option>
+            <mat-option value="CREDIT">Credit Account</mat-option>
+            <mat-option value="CHEQUE">Cheque Account</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>Initial deposit</mat-label>
+          <input name="availableBalance" [(ngModel)]="form.availableBalance"
+          required   #availableBalance="ngModel"  matInput type="number" class="example-right-align" placeholder="0" autocomplete="off">
+          <span matPrefix>R&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+      <div>
+        <button type="submit" mat-flat-button color="warn" style="width : 29em;" >
+          Add account
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="isSuccessful">
+      <h2>Account added successfully</h2>
+      <button mat-flat-button (click)="addAccount()">Add another account</button>
+    </div>
+   
+</div>

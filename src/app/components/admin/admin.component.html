@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="users-panel">
+
+    <div class="header">
+
+        <h2 class="title">All Clients</h2>
+
+
+        </div>
+
+        <div class="form">
+          <button mat-flat-button color="accent" (click)="addClient()">
+             add new bank account
+          </button>
+          <button mat-flat-button color="primary" (click)="deposit()">
+            Deposit
+          </button>
+
+          <button mat-flat-button color="warn" routerLink="/roles">
+            Add Roles
+          </button>
+      </div>
+
+<mat-card>
+    
+<div  class="list-wrapper" ng-app="app" ng-controller="MainCtrl as ctrl">
+  <ul *ngFor="let user of users" class="list">
+    <li class="list-item">
+      <div>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/488320/profile/profile-80.jpg" class="list-item-image">
+      </div>
+      <div class="list-item-content">
+        <h4>{{user.name}}</h4>
+        <p>{{user.email}}</p>
+      </div>
+    </li>
+    <div class="button" (click)="userDetails(user.id)">
+      View
+    </div>
+  </ul>
+</div>
+
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+
+</mat-card>
+
+
+
+

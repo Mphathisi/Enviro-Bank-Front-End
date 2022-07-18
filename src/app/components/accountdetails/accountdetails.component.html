@@ -1,0 +1,40 @@
+<app-header></app-header>
+<app-back-button></app-back-button>
+
+<div class="courses-panel">
+
+  <div class="header">
+
+      <h2 class="title">Account Details</h2>
+  </div>
+
+  <div class="center">
+      <mat-card>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item >
+               <h4 matLine>Account type : <span>{{bankaccount.accountType}}</span></h4>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item >
+              <h4 matLine>Account Number : <span></span>{{bankaccount.accountNumber}}</h4>
+           </mat-list-item>
+           <mat-divider></mat-divider>
+            <mat-list-item >
+               <h4 matLine>Available Balance : <span></span>{{bankaccount.availableBalance}}</h4>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item >
+              <h4 matLine>Latest Balance : <span></span>{{bankaccount.latestBalance}}</h4>
+           </mat-list-item>
+            <mat-divider></mat-divider>
+           <mat-list-item >
+            <h4 matLine>Account Status : <span></span>{{bankaccount.accountStatus}}</h4>
+         </mat-list-item>
+         </mat-list>
+        </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+

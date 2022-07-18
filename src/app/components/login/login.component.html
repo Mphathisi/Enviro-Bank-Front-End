@@ -1,0 +1,71 @@
+<div class="app-name">
+    <p class="app-name-name login-header">
+        <span class="app-name-name-span">Enviro Bank</span>
+    </p>
+</div>
+<div class="app-login">  
+        <p class="app-name-tag">
+            <span class="app-name-tag-span">
+                -HELPING You Make Smart Financial Choices-
+            </span> 
+        </p>
+</div>
+
+<div class="example-container">
+    
+    <div class="form-container ">
+        <div class="form-container-header app-login-text">
+            <p class="form-container-header-text ">
+                <span class="form-container-header-text-span">
+                    Login
+                </span>
+            </p>
+        </div>
+        <div class="form-container-body">
+          
+
+      <form  *ngIf="!isLoggedIn"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate>
+    
+
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput required name="username"
+          [(ngModel)]="form.email"
+          required
+          #username="ngModel">
+          <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
+            <span *ngIf="username.errors">
+              Email is required
+            </span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label> Password
+          </mat-label>
+          <input matInput required name="password"
+          [(ngModel)]="form.password"
+          required
+          #password="ngModel">
+
+          <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+            <span *ngIf="password.errors">
+              Password is required
+            </span>
+          </mat-error>
+          
+        </mat-form-field>
+
+        <button type="submit" mat-flat-button color="warn" style="width : 29em;">
+          Login
+        </button>
+        
+      </form>
+    </div>
+  </div>
+
+

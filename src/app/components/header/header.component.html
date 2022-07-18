@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+
+    <span><img src="/assets/logo.jpg" height=28 width=41></span>
+    <span class="title">Enviro Bank</span>
+     
+    
+    <span class="flex-spacer"></span>
+
+   
+    
+   
+    <div class="form">
+        <form #form="ngForm">
+            <mat-form-field >
+              <input matInput placeholder="Search" maxlength="8" minlength="5" required
+                     #name autocomplete="off" appearance="fill">
+            </mat-form-field>
+            <button mat-icon-button type="submit" color="accent" aria-label="Save name">
+                <mat-icon>search</mat-icon>
+              </button>
+          </form>
+    </div>
+
+    
+    <span class="flex-spacer"></span>
+
+    <a mat-button [matMenuTriggerFor]="dropdown">
+        {{currentUser.name}} {{currentUser.surname}}
+    </a>
+    <mat-menu #dropdown>
+        <button mat-menu-item routerLink="/account"><span class="material-icons">
+            supervisor_account
+            </span>  Account</button>
+        <button mat-menu-item routerLink="/login"> 
+            <span class="material-icons">
+                logout
+                </span>
+            Logout</button>
+    </mat-menu>
+   
+
+    <a *ngIf="!isLogin()" mat-button routerLink="/login"> 
+        <mat-icon>account_circle</mat-icon>
+        Login
+    </a>
+    <a *ngIf="isLogin()" mat-button routerLink="/login"> 
+        <mat-icon></mat-icon>
+        Logout
+        <mat-icon>exit</mat-icon>
+    </a>
+
+</mat-toolbar>

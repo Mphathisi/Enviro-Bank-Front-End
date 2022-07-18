@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+<div class="app-name">
+    <p class="app-name-name login-header">
+        <span class="app-name-name-span">Enviro Bank</span>
+    </p>
+</div>
+<div class="app-login">  
+        <p class="app-name-tag">
+            <span class="app-name-tag-span">
+                -HELPING You Make Smart Financial Choices-
+            </span> 
+        </p>
+</div>
+
+
+
+
+
+Account Number :{{bankaccount.accountNumber}}
+id: {{bankaccount.bank_account_id}}
+
+<div class="example-container">
+
+  
+    
+    <div class="form-container ">
+        <div class="form-container-header app-login-text">
+            <p class="form-container-header-text ">
+                
+                <span class="form-container-header-text-span">
+                
+                    Transfering to {{bankaccount.accountNumber}}
+                </span>
+            </p>
+        </div>
+        <div class="form-container-body">
+      <form>
+       
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>Reciepient Account Number</mat-label>
+          <input name="receiverAccountNo" [(ngModel)]="form.senderAccount" matInput placeholder="Sender Account " maxlength="8" minlength="5" required
+                 #name value= {{bankaccount.accountNumber}} disabled="true">
+        </mat-form-field>
+       
+
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>Deposit</mat-label>
+          <input name="depositAmount" [(ngModel)]="form.depositAmount"
+          required   #depositAmount="ngModel"  matInput type="number" matInput placeholder="Deposit Amount" class="example-right-align" placeholder="0" autocomplete="off">
+          <span matPrefix>R&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label>Account number</mat-label>
+          <input matInput   name="accountNumber"
+          [(ngModel)]="form.accountNumber"
+          required matInput  #accountNumber="ngModel"  type="number" class="example-left-align" placeholder="0" autocomplete="off">
+        </mat-form-field>
+
+        
+        <button  mat-flat-button color="warn" style="width : 29em;">Pay</button>
+      </form>
+    </div>
+  </div>

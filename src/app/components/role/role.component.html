@@ -1,0 +1,89 @@
+<app-header></app-header>
+<app-back-button></app-back-button>
+
+<div class="example-container">
+    
+    <div class="form-container ">
+        <div class="form-container-header app-login-text">
+            <p class="form-container-header-text ">
+                <span class="form-container-header-text-span">
+                    Add role
+                </span>
+            </p>
+        </div>
+        <div class="form-container-body">
+          
+
+            <form  *ngIf="!isSuccessful"
+            name="form"
+            (ngSubmit)="f.form.valid && addRole()"
+            #f="ngForm"
+            novalidate>
+              <mat-form-field  class="form-field" appearance="fill">
+                  <mat-label>Choose account type</mat-label>
+                  <mat-select [(value)]="form">
+                    <mat-option>None</mat-option>
+                    <mat-option value="1">admin</mat-option>
+                    <mat-option value="2">user</mat-option>
+                  </mat-select>
+                </mat-form-field>
+       
+
+        <button type="submit" mat-flat-button color="warn" style="width : 29em;">
+          Submit
+        </button>
+        
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Role</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                               
+                                <th>
+                                    Action
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let role of roles">
+                                    <td>
+                                        {{role.id}}
+                                    </td>
+                                    <td>
+                                        {{role.name}}
+                                    </td>
+        
+                                    <td>
+                                        <button mat-flat-button>Edit</button>
+                                        <button mat-flat-button (click)="deleteRole(role.id)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  
+
+
+
+
+

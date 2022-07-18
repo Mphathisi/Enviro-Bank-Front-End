@@ -1,0 +1,87 @@
+<app-header></app-header>
+
+<h2 class="profile-name">Bank Account Profile </h2>
+
+<div class="center">
+  
+    <button mat-flat-button color="primary">Tranfer</button>
+    <button mat-flat-button color="accent" routerLink="/transactions">View transactions</button>
+    <button mat-flat-button color="warn" routerLink="/changePassword">Change password</button>
+</div>
+    
+<div>
+    <mat-card>
+        <div class="center">
+        <div >
+            <img width="46" alt="Angular Logo" style="margin-bottom: 29px"
+              src="/assets/avatar.png"
+            >
+                <mat-card-title class="names" >Personal Details</mat-card-title>
+          </div>
+         
+         <div class="card-container">
+          <mat-divider></mat-divider>
+            <mat-list>
+              <mat-list-item >
+                 <h4 matLine>Full Names : {{currentUser.name}} {{currentUser.surname}} <span></span></h4>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item >
+                <h4 matLine>ID Number : <span></span>{{currentUser.idNumber}}</h4>
+             </mat-list-item>
+             <mat-divider></mat-divider>
+              <mat-list-item >
+                 <h4 matLine>E-Mail : <span></span>{{currentUser.email}}</h4>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item >
+                <h4 matLine>Role : <span></span>{{currentUser.role}}</h4>
+             </mat-list-item>
+           </mat-list>
+         </div>
+      </div>
+    </mat-card>
+</div>
+
+
+<div>
+
+  <mat-card>
+    <div class="center">
+    <div >
+       
+            <mat-card-title class="names" >Bank Account Details</mat-card-title>
+      </div>
+     
+     <div class="card-container">
+      <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item >
+             <h4 matLine>Account type : <span></span>{{BankAccount.bankAccountType}}</h4>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item >
+            <h4 matLine>Account Number : <span></span>{{BankAccount.accountNumber}}</h4>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+          <mat-list-item >
+             <h4 matLine>Available Balance : <span></span>{{BankAccount.availableBalance}}</h4>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item >
+            <h4 matLine>Latest Balance : <span></span>{{BankAccount.latestBalance}}</h4>
+         </mat-list-item>
+          <mat-divider></mat-divider>
+         <mat-list-item >
+          <h4 matLine>Account Status : <span></span>{{BankAccount. bankAccountStatus}}</h4>
+       </mat-list-item>
+       </mat-list>
+     </div>
+  </div>
+</mat-card>
+
+</div>
+
+
+
+    

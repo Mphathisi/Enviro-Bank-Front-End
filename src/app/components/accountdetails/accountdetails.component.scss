@@ -1,0 +1,43 @@
+
+.courses-panel {
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+}
+
+
+  .names{
+    color: #808080;
+    font-family: "IBM Plex Mono";
+    font-weight: 600;
+  }
+  
+
+
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    margin-right: 15px;
+}
+
+.mat-list-item{
+    margin: 20px;
+}
+.center{
+    text-align: center;
+}
+img{
+    border-radius: 50%;
+}
+
+.mat-flat-button{
+  margin: 10px;
+}
+.mat-card{
+    margin: 20px;
+}

@@ -1,0 +1,173 @@
+ 
+ .mat-raised-button{
+   margin-right: 10px;
+ }
+ .mat-list-item{
+    margin: 5px;
+ }
+
+ .users-panel {
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.users{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 900px;
+
+}
+.title {
+    text-align: center;
+    margin-right: 15px;
+}
+
+
+.example-container{
+    text-align: center
+}
+
+.form-container{
+    width: 550px; 
+    margin: 0px auto; 
+    margin-top: auto;
+}
+
+.form-field{
+    display: block
+}
+
+mat-button {
+    width: 50px;
+}
+
+
+.app-login-text{
+    color: #808080;
+    font-size: 18px;
+    font-family: "IBM Plex Mono";
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+  .example-full-width {
+    width: 100%;
+  }
+ .mat-raised-button{
+   margin-right: 10px;
+ }
+ .mat-list-item{
+    margin: 5px;
+ }
+
+
+ .courses-panel {
+    max-width: 400px;
+    margin: 20px auto 0 auto;
+}
+
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    margin-right: 15px;
+}
+
+
+
+.button {
+  border: 1px solid #1da0f2;
+  color: #1da0f2;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 15px;
+  padding: 5px;
+  min-width: 67px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(29, 161, 242, 0.1);
+  cursor: pointer;
+}
+
+.mat-flat-button{
+  margin: 10px;
+}
+
+
+
+$color: #555;
+$main-background: #5B9EED;
+$white: #fff;
+$white-two: #aaa;
+body {
+  color: #555;
+  background-color: #5B9EED;
+  font-family: sans-serif;
+}
+
+.list-wrapper {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.list {
+  background: $white;
+  border-radius: 2px;
+  list-style: none;
+  padding: 5px 1px;
+}
+
+.list-item {
+  display: flex;
+  margin: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  &:last-child{
+    border-bottom: none;
+  }
+  &-image {
+    border-radius: 50%;
+    width: 64px;
+  }
+  &-content{
+    margin-left: 20px;
+    h4, p{
+      margin: 0;
+    }
+    h4{
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    p{
+      margin-top: 5px;
+      color: $white-two;
+    }
+  }
+}
+
+
+
+
+

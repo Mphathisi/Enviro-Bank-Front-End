@@ -1,0 +1,75 @@
+
+.courses-panel {
+    max-width: 400px;
+    margin: 20px auto 0 auto;
+}
+
+
+  .names{
+    color: #808080;
+    font-family: "IBM Plex Mono";
+    font-weight: 600;
+  }
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    margin-right: 15px;
+}
+
+.center{
+    text-align: center;
+}
+img{
+    border-radius: 50%;
+}
+
+.mat-flat-button{
+  margin: 10px;
+}
+.mat-card{
+    margin: 20px;
+}
+
+
+.profile-name {
+    color: #808080;
+    font-size: 36px;
+    font-family: "IBM Plex Mono";
+    font-weight: 600;
+    text-align: center;
+    margin: 5px;
+  }
+
+.mat-flat-button {
+    width: 26em;
+}
+
+
+.card-container {
+    width: 500px; 
+    margin: 0px auto;
+    text-align: center;
+}
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.center{
+   
+    margin: 10px auto;
+   
+}
+.mat-card{
+    width: 800px;
+    margin: 15px auto;
+    text-align: center;
+
+}
