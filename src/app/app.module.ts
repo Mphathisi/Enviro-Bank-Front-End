@@ -59,6 +59,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { PaymentComponent } from './components/payment/payment.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { LinkBankAccountWithUserComponent } from './components/link-bank-account-with-user/link-bank-account-with-user.component';
+import { LinkRoleComponent } from './components/link-role/link-role.component';
 
 
 
@@ -84,6 +85,7 @@ import { LinkBankAccountWithUserComponent } from './components/link-bank-account
     PaymentComponent,
     BackButtonComponent,
     LinkBankAccountWithUserComponent,
+    LinkRoleComponent,
     
   ],
   imports: [

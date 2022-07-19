@@ -11,7 +11,7 @@
     Click Me to get my details
   </button>
     
-    <button mat-flat-button color="accent" >Assign Role</button>
+    <button mat-flat-button color="accent"  (click)="linkRole(user.id)">Assign Role</button>
 </div>
     
 <div>
@@ -40,7 +40,14 @@
               </mat-list-item>
               <mat-divider></mat-divider>
               <mat-list-item >
-                <h4 matLine>Role : <span></span>{{user.roles}}</h4>
+
+            <mat-list style="text-align: center;">
+              <mat-list-item *ngFor="let role of user.roles">
+                  <h3 mat-line>Role id : {{role.id}}</h3>
+                  <h3 mat-line> Role name: {{role.name}}</h3>
+              </mat-list-item>
+            </mat-list>
+  
              </mat-list-item>
            </mat-list>
          </div>

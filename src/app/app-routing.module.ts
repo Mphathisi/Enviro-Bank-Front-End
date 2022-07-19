@@ -13,6 +13,7 @@ import { ChangepasswordComponent } from './components/changepassword/changepassw
 import { TransferComponent } from './components/transfer/transfer.component';
 import { RoleComponent } from './components/role/role.component';
 import { LinkBankAccountWithUserComponent } from './components/link-bank-account-with-user/link-bank-account-with-user.component';
+import { LinkRoleComponent } from './components/link-role/link-role.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'addaccount/:id', component: AddaccountComponent},
   {path: 'roles', component: RoleComponent},
   {path: 'users/:id/bankaccounts', component: LinkBankAccountWithUserComponent},
+  {path: 'role/:id', component: LinkRoleComponent},
   {path: '**', redirectTo: 'login'}
     
 ];

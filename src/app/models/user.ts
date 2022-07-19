@@ -1,4 +1,5 @@
 import { Bankaccount } from "./bankaccount";
+import { Role } from "./role";
 export class User {
     id!: number;
     name!: string;
@@ -6,7 +7,7 @@ export class User {
     email!: string;
     idNumber!: string;
     password!: string;
-    roles!: string[];
+    roles!: Role[];
     bankAccounts!: Bankaccount[];
     
 }

@@ -1,0 +1,77 @@
+<app-header></app-header>
+<app-back-button></app-back-button>
+
+ <div class="container">
+  <h1>Link Role </h1>
+
+  <div *ngIf="user">
+    <h3>User</h3>
+    <mat-list>
+      <mat-list-item>
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          <h3 mat-line>User id : {{user.id}}</h3>
+          <h3 mat-line>{{user.name}} {{user.surname}}</h3>
+          <p mat-line>{{user.email}}</p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div *ngIf="role">
+   <h3>Role</h3>
+    <mat-list>
+      <mat-list-item>
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          <h3 mat-line>Role id : {{role.id}}</h3>
+          <h3 mat-line>{{role.name}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div>
+    <h3>Available Roles</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let role of user.roles">
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          <h3 mat-line>Role id : {{role.id}}</h3>
+          <h3 mat-line>{{role.name}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <h3>Please use role id : 1 for adding role admin</h3>
+  <h3>Please use role id : 2 for adding  role user</h3>
+
+  <form  *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)="f.form.valid && linkRole() "
+    #f="ngForm"
+    novalidate>
+
+       {{errorMessage}}
+
+      
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>User id</mat-label>
+          <input name="userRoleId"[(ngModel)]="userRoleId"
+          required   #userRoleId="ngModel"  matInput type="number" class="example-right-align" placeholder="1" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>Role Id</mat-label>
+          <input name="roleId" [(ngModel)]="form.role"
+          required  #roleId="ngModel"  matInput type="text" class="example-right-align" placeholder="2" autocomplete="off">
+        </mat-form-field>
+
+
+
+      <div>
+        <button type="submit" mat-flat-button color="warn" style="width : 29em;" >
+          Link account
+        </button>
+      </div>
+    </form>
+
+ </div>
+
+  
+

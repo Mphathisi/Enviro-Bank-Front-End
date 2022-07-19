@@ -13,6 +13,7 @@ import {Bankaccount } from '../../models/bankaccount'
 import { AuthService } from 'src/app/services/auth.service';
 import { BankaccountService } from 'src/app/services/bankaccount.service';
 import { UserService } from 'src/app/services/user.service';
+import { RoleService } from 'src/app/services/role.service';
 
 
 @Component({
@@ -24,6 +25,8 @@ export class ClientdetailsComponent implements OnInit {
 
   id!: number;
   user! :User;
+  roles : any[] = [];
+  role! : any;
   bankaccount!: Bankaccount;
   bankAccounts!: Bankaccount[];
 
@@ -31,6 +34,7 @@ export class ClientdetailsComponent implements OnInit {
   constructor(
     private _bottomSheet: MatBottomSheet,
      private router:Router,
+     private roleService: RoleService,
      private bankaccountService : BankaccountService, 
      private service: AuthService,
      private userService: UserService,
@@ -52,8 +56,9 @@ export class ClientdetailsComponent implements OnInit {
         , error => {
           console.log(error);
         }
-        );
+      );
 
+      this.getRoles();
   }
 
   createBankAccount(id : number){
@@ -64,7 +69,33 @@ export class ClientdetailsComponent implements OnInit {
     this.router.navigate(['addaccount', id]);
   }
 
+  linkRole(id : number){
+    this.router.navigate(['role', id]);
+  }
 
+  getRoles(){
+    this.roleService.roles().subscribe(
+      data => {
+        this.role = data;
+      }
+      ,
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  getRole(id : number){
+    this.roleService.getRole(id).subscribe(
+      data => {
+        this.role = data;
+      }
+      ,
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
 
 
