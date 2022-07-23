@@ -33,13 +33,11 @@ export class BankaccountService {
     return this.httpClient.post(`${this.baseURL}/adminDeposit`, {accountNumber, depositAmount});
   }
 
-  deposioDifferentAccount(senderAccountNo: string, receiverAccountNo:string , amount: number): Observable<any> {
+  depositToDifferentUserAccount(senderAccountNo: string, receiverAccountNo:string , amount: number): Observable<any> {
     return this.httpClient.post(`${this.baseURL}/deposit`, {senderAccountNo, receiverAccountNo, amount});
   }
 
-  tranfer(id: number, bankAccount: Bankaccount): Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}/${id}/transfer`, bankAccount);
-  }
+  
 
 
   linkBankAccountWithUser(id : number, accountNumber: string): Observable<Object>{

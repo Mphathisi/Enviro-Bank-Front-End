@@ -62,7 +62,7 @@ export class LinkRoleComponent implements OnInit {
   }
 
   linkRole(){
-    this.roleService.linkRole(this.form.userId, this.form.roleId).subscribe(
+    this.roleService.linkRole(this.form. userRoleId, this.form.roleId).subscribe(
       data => {
         this.isSuccessful = true;
       }

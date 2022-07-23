@@ -29,11 +29,11 @@ export class AuthService {
     }, httpOptions);
   }
 
-  changePassword(email: string, oldPassword: string, newPassword: string): Observable<any> {
-    return this.http.put(AUTH_API + 'changePassword', {
+  changePassword(email: string, oldPassword: string, password: string): Observable<any> {
+    return this.http.post(AUTH_API + 'changePassword', {
       email,
       oldPassword,
-      newPassword
+      password
     }, httpOptions);
   }
 

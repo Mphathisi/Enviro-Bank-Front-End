@@ -33,19 +33,7 @@ export class AdminComponent implements OnInit {
 
   currentUser: any;
 
-  ngOnInit(): void {
-    this.currentUser = this.token.getUser();
-    this.userService.getUsers().subscribe( data => {
-      this.users = data;
-    }
-    );
-    this.id = this.route.snapshot.params['id'];
-    this.userService.getUsers().subscribe( data => {
-      this.users = data;
-      console.log(this.users);
-    } 
-    );
-  }
+
 
   users! : User[];
   id! :number;
@@ -62,6 +50,24 @@ export class AdminComponent implements OnInit {
     
      ) {}
 
+  ngOnInit(): void {
+
+    this.currentUser = this.token.getUser();
+    this.userService.getUsers().subscribe( data => {
+      this.users = data;
+    }
+    );
+    this.id = this.route.snapshot.params['id'];
+    this.userService.getUsers().subscribe( data => {
+      this.users = data;
+      console.log(this.users);
+    } 
+    );
+
+  }
+
+
+ 
    
      deposit(): void {
       this._bottomSheet.open(DepositComponent , { panelClass: 'custom-width' });
@@ -74,6 +80,14 @@ export class AdminComponent implements OnInit {
 
     pay(id: number){
       this.router.navigate(['transfer', id]);
+    }
+
+
+    getUsers(){
+      this.userService.getUsers().subscribe( data => {
+        this.users = data;
+      }
+      );
     }
    
   

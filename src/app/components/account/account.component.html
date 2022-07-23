@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-back-button></app-back-button>
 
 <h2 class="profile-name">Bank Account Profile </h2>
 
@@ -7,6 +8,7 @@
     <button mat-flat-button color="primary">Tranfer</button>
     <button mat-flat-button color="accent" routerLink="/transactions">View transactions</button>
     <button mat-flat-button color="warn" routerLink="/changePassword">Change password</button>
+    <button mat-flat-button color="warn" routerLink="/login">Logout</button>
 </div>
     
 <div>
@@ -35,13 +37,16 @@
               </mat-list-item>
               <mat-divider></mat-divider>
               <mat-list-item >
-                <h4 matLine>Role : <span></span>{{currentUser.role}}</h4>
+                <h4 matLine>user Role :  <span></span>{{role}}</h4>
              </mat-list-item>
            </mat-list>
          </div>
       </div>
     </mat-card>
 </div>
+
+
+
 
 
 <div>
@@ -55,25 +60,25 @@
      
      <div class="card-container">
       <mat-divider></mat-divider>
-        <mat-list>
+        <mat-list >
           <mat-list-item >
-             <h4 matLine>Account type : <span></span>{{BankAccount.bankAccountType}}</h4>
+             <h4 matLine>Account type : {{bankaccount.accountType}} <span></span></h4>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item >
-            <h4 matLine>Account Number : <span></span>{{BankAccount.accountNumber}}</h4>
+            <h4 matLine>Account Number : {{bankaccount.accountNumber}}  <span></span></h4>
          </mat-list-item>
          <mat-divider></mat-divider>
           <mat-list-item >
-             <h4 matLine>Available Balance : <span></span>{{BankAccount.availableBalance}}</h4>
+             <h4 matLine>Available Balance : {{bankaccount.availableBalance}}  <span></span></h4>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item >
-            <h4 matLine>Latest Balance : <span></span>{{BankAccount.latestBalance}}</h4>
+            <h4 matLine>Latest Balance : {{bankaccount.latestBalance}}  <span></span></h4>
          </mat-list-item>
           <mat-divider></mat-divider>
          <mat-list-item >
-          <h4 matLine>Account Status : <span></span>{{BankAccount. bankAccountStatus}}</h4>
+          <h4 matLine>Account Status : {{bankaccount.accountStatus}}  <span></span></h4>
        </mat-list-item>
        </mat-list>
      </div>

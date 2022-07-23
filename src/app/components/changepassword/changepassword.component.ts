@@ -17,8 +17,9 @@ export class ChangepasswordComponent implements OnInit {
 
 
   form: any = {
-    password: null,
-    newpassword: null,
+    oldPassword: '',
+    password: '',
+   
   };
   isSuccessful = false;
   isSignUpFailed = false;
@@ -34,11 +35,11 @@ export class ChangepasswordComponent implements OnInit {
 
 
   onSubmit() {
-    const {password, newpassword} = this.form;
-    this.authService.changePassword(this.currentUser.email, password, newpassword).subscribe({
+    const {oldPassword , password} = this.form;
+    this.authService.changePassword(this.currentUser.email, oldPassword,  password).subscribe({
       next: data => {
         this.isSuccessful = true;
-        this.isSignUpFailed = false;
+        this.router.navigate(['/account']);
       },
       error: err => {
         this.errorMessage = err.error.message;
