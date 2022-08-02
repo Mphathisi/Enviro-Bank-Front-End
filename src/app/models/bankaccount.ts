@@ -1,3 +1,5 @@
+import { BankStatements } from "./bankStatements";
+
 export class Bankaccount {
     bank_account_id!:number;
     accountType! : string;
@@ -5,4 +7,5 @@ export class Bankaccount {
     accountNumber! : string;
     availableBalance! :number;
     latestBalance! :number;
+    bankStatements!:  BankStatements[] 
 }

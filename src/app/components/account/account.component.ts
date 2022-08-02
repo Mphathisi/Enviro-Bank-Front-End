@@ -56,12 +56,9 @@ export class AccountComponent implements OnInit {
    
     this.getUsers();
     this.getUser();
-    
-
 
     
   }
-
 
 
   //users
@@ -80,6 +77,10 @@ export class AccountComponent implements OnInit {
         this.user = data;
       }
     );
+  }
+
+  viewTransactions(id: number){
+    this.router.navigate(['transactions', id]);
   }
 
 

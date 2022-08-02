@@ -6,7 +6,7 @@
 <div class="center">
   
     <button mat-flat-button color="primary">Tranfer</button>
-    <button mat-flat-button color="accent" routerLink="/transactions">View transactions</button>
+    <button mat-flat-button color="accent" (click)="viewTransactions(currentUser.id)">View transactions</button>
     <button mat-flat-button color="warn" routerLink="/changePassword">Change password</button>
     <button mat-flat-button color="warn" routerLink="/login">Logout</button>
 </div>

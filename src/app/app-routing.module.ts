@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'transfer/:id', component: TransferComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'account', component: AccountComponent},
-  {path: 'transactions', component: TransactionsComponent},
+  {path: 'transactions/:id', component: TransactionsComponent},
   {path: 'details/:id', component: ClientdetailsComponent},
   {path: 'accountDetails/:id', component: AccountdetailsComponent},
   {path: 'changePassword', component: ChangepasswordComponent},

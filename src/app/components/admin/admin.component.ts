@@ -82,6 +82,10 @@ export class AdminComponent implements OnInit {
       this.router.navigate(['transfer', id]);
     }
 
+    
+ 
+
+
 
     getUsers(){
       this.userService.getUsers().subscribe( data => {

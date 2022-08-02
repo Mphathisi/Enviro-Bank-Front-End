@@ -1,71 +1,36 @@
 <app-header></app-header>    
 <app-back-button></app-back-button>
-<div class="card-container">
-
-    <mat-tab-group>
-        <mat-tab label="Money In"> 
-            <div class="card-container">
-                <mat-list>
-                    <mat-list-item>
-                        <div mat-line>Mphathisi Dayimani</div>
-                        <h4 mat-Line>R 43.34</h4>
-                </mat-list-item>
-                <mat-divider></mat-divider>
-                <mat-list-item>
-                    <div mat-line>Mphathisi Dayimani</div>
-                    <h4 mat-Line>R 43.34</h4>
-            </mat-list-item>
-            <mat-divider></mat-divider>
 
 
-            <mat-list-item>
-                <div mat-line>Mphathisi Dayimani</div>
-                <h4 mat-Line>R 43.34</h4>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>
-            <div mat-line>Mphathisi Dayimani</div>
-            <h4 mat-Line>R 43.34</h4>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-        <div mat-line>Mphathisi Dayimani</div>
-        <h4 mat-Line>R 43.34</h4>
-</mat-list-item>
-<mat-divider></mat-divider>
-                </mat-list>
-                    </div>
-                 </mat-tab>
-                <mat-tab label="Money Out">
-                    <div class="card-container">
-                        <mat-list>
-                            <mat-list-item>
-                                <div mat-line>Mphathisi Dayimani</div>
-                                <h4 mat-Line>R 43.34</h4>
-                        </mat-list-item>
-                        <mat-divider></mat-divider>
-                        <mat-list-item>
-                            <div mat-line>Mphathisi Dayimani</div>
-                            <h4 mat-Line>R 43.34</h4>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>
-                        <div mat-line>Mphathisi Dayimani</div>
-                        <h4 mat-Line>R 43.34</h4>
-                </mat-list-item>
-                <mat-divider></mat-divider>
-                <mat-list-item>
-                    <div mat-line>Mphathisi Dayimani</div>
-                    <h4 mat-Line>R 43.34</h4>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-                        <mat-divider></mat-divider>
-                        </mat-list>
-                    </div>
-                </mat-tab>
-     </mat-tab-group>
-<app-footer></app-footer>
-       
-
-
-</div>
+<div>
+    <mat-card>
+        <div class="center">
+        <div >
+            <img width="46" alt="visa Logo" style="margin-bottom: 29px"
+              src="/assets/visa.png"
+            >
+                <mat-card-title class="names" >Banking details Details</mat-card-title>
+          </div>
+  
+        
+         <div class="card-container">
+          <mat-divider></mat-divider>
+            <mat-list *ngFor="let bankStatements of bankaccount.bankStatements">
+              <mat-list-item>
+                  <h4 matLine>Money in : {{bankStatements.money_in}} <span></span></h4>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>
+                <h4 matLine>Money out: {{bankStatements.money_out}} <span></span></h4>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>
+                <h4 matLine> Sender account number : {{bankStatements.sender}} <span></span></h4>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  
