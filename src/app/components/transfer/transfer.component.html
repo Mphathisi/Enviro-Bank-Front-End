@@ -1,36 +1,14 @@
 <app-header></app-header>
 <app-back-button></app-back-button>
 
-
-
-<div *ngIf="currentUser">
-    {{currentUser.name}} {{currentUser.surname}}
-
-    {{currentUser.idNumber}}
-    {{currentUser.email}}
-    {{currentUser.role}}
-    {{currentUser.bankAccountType}}
-    {{currentUser.accountNumber}}
-    {{currentUser.availableBalance}}
-    {{currentUser.latestBalance}}
-</div>
-
-
-
-
-Account Number :{{bankaccount.accountNumber}}
-id: {{bankaccount.bank_account_id}}
-
 <div class="example-container">
 
-  
-    
+
     <div class="form-container ">
         <div class="form-container-header app-login-text">
             <p class="form-container-header-text ">
                 
                 <span class="form-container-header-text-span">
-                
                     Transfering to {{bankaccount.accountNumber}}
                 </span>
             </p>

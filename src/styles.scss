@@ -115,7 +115,7 @@ body {
   font-weight: 1000;
   margin-bottom: 0px;
   margin-top: 0px;
-  text-align: left;
+  text-align: center;
 }
 
 .app-name-tag {
@@ -123,12 +123,17 @@ body {
   font-size: 36px;
   font-family: "IBM Plex Mono";
   font-weight: 600;
+  text-align: center;
 }
 
 .header-app-name {
   color: #fff;
   font-family: "IBM Plex Mono";
   font-style: italic;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  
 }
 
 
