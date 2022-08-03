@@ -14,6 +14,10 @@ import { TransferComponent } from './components/transfer/transfer.component';
 import { RoleComponent } from './components/role/role.component';
 import { LinkBankAccountWithUserComponent } from './components/link-bank-account-with-user/link-bank-account-with-user.component';
 import { LinkRoleComponent } from './components/link-role/link-role.component';
+import { UserAppointmentComponent } from './components/user-appointment/user-appointment.component';
+import { AdminAppointmentsComponent } from './components/admin-appointments/admin-appointments.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { ViewAppointmentComponent } from './components/view-appointment/view-appointment.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -31,6 +35,13 @@ const routes: Routes = [
   {path: 'roles', component: RoleComponent},
   {path: 'users/:id/bankaccounts', component: LinkBankAccountWithUserComponent},
   {path: 'role/:id', component: LinkRoleComponent},
+  {path: 'appointment', component: UserAppointmentComponent},
+  {path: 'appointments', component: AdminAppointmentsComponent},
+  {path: 'appointmentDetails/:id', component: ViewAppointmentComponent},
+  {path: 'payments', component: PaymentComponent},
+ 
+
+
   {path: '**', redirectTo: 'login'}
     
 ];

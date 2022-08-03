@@ -60,6 +60,9 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { LinkBankAccountWithUserComponent } from './components/link-bank-account-with-user/link-bank-account-with-user.component';
 import { LinkRoleComponent } from './components/link-role/link-role.component';
+import { UserAppointmentComponent } from './components/user-appointment/user-appointment.component';
+import { AdminAppointmentsComponent } from './components/admin-appointments/admin-appointments.component';
+import { ViewAppointmentComponent } from './components/view-appointment/view-appointment.component';
 
 
 
@@ -86,6 +89,9 @@ import { LinkRoleComponent } from './components/link-role/link-role.component';
     BackButtonComponent,
     LinkBankAccountWithUserComponent,
     LinkRoleComponent,
+    UserAppointmentComponent,
+    AdminAppointmentsComponent,
+    ViewAppointmentComponent,
     
   ],
   imports: [

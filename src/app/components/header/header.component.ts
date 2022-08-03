@@ -22,6 +22,8 @@ export class HeaderComponent implements OnInit {
       return this.token.getToken() ? true : false;
   }
 
+  role!: string;
+
 
     ngOnInit() {
       this.currentUser = this.token.getUser();
@@ -35,6 +37,21 @@ export class HeaderComponent implements OnInit {
     view(id: number): void {
       this._bottomSheet.open(AccountdetailsComponent, { panelClass: 'custom-width' });
     }
+
+
+    currentUserRole(): string {
+      return this.token.getUser().role;
+    }
+    roleAdmin(): boolean {
+      return this.token.getUser().role === 'admin';
+    }
+    roleUser(): boolean {
+      return this.token.getUser().role === 'user';
+    }
+    roleAdminOrUser(): boolean {
+      return this.token.getUser().role === 'admin' || this.token.getUser().role === 'user';
+    }
+    
 
 
   

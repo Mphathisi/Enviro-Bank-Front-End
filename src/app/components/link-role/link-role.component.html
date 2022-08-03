@@ -50,13 +50,21 @@
        {{errorMessage}}
 
       
+
+       <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+        <mat-label>User Id</mat-label>
+        <input name="userId" [(ngModel)]="form.userId" matInput 
+        required  #userId="ngModel"  matInput type="number" class="example-right-align" placeholder="2" autocomplete="off">
+      </mat-form-field>
        
 
         <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
           <mat-label>Role Id</mat-label>
-          <input name="roleId" [(ngModel)]="form.role"
-          required  #roleId="ngModel"  matInput type="text" class="example-right-align" placeholder="2" autocomplete="off">
+          <input name="roleId" [(ngModel)]="form.roleId" matInput 
+          required  #roleId="ngModel"  matInput type="number" class="example-right-align" placeholder="1" autocomplete="off">
         </mat-form-field>
+
+        
 
 
 

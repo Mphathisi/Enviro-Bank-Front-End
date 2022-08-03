@@ -1,0 +1,22 @@
+<app-header></app-header>
+<app-back-button></app-back-button>
+
+
+    
+    <div class="center-everything">
+        <h2>appointments</h2>
+
+
+        <div *ngFor="let appointment of appointments" class="container darker">
+        <p>{{appointment.accountNumber}}</p>
+        <p>{{appointment.message}}  </p>
+        <span class="time-right" (click)="viewAppointment(appointment.id)">view more</span>
+        </div>
+
+
+
+
+
+
+    </div>
+

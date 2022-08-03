@@ -1,0 +1,64 @@
+<app-header></app-header>
+<app-back-button></app-back-button>
+
+ <div class="container">
+  <h1>Request for Admin to make deposit </h1>
+
+    <form  *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)="f.form.valid && makeAppointment() "
+    #f="ngForm"
+    novalidate>
+     
+      <mat-form-field  class="form-field" appearance="fill">
+          <mat-label>Choose account type</mat-label>
+          <mat-select [(value)]="form.accountType">
+            <mat-option>None</mat-option>
+            <mat-option value="SAVINGS">Savings Account</mat-option>
+            <mat-option value="CREDIT">Credit Account</mat-option>
+            <mat-option value="CHEQUE">Cheque Account</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="fill">
+            <mat-label>E-Mail</mat-label>
+            <input name="email"
+            [(ngModel)]="form.email"
+            required
+            email
+            #email="ngModel" type="email" matInput placeholder="mphathisi@enviro.com">
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Account number</mat-label>
+            <input matInput   name="accountNumber"
+            [(ngModel)]="form.accountNumber"
+            required matInput  #accountNumber="ngModel"  type="number" class="example-left-align" placeholder="0" autocomplete="off">
+          </mat-form-field>
+
+
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>Amount to be deposited</mat-label>
+          <input name="availableBalance" [(ngModel)]="form.amount"
+          required   #amount="ngModel"  matInput type="number" class="example-right-left" placeholder="0" autocomplete="off">
+          <span matPrefix>R&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Message</mat-label>
+            <input    name="availableBalance" [(ngModel)]="form.message"
+            required  #message="ngModel" matInput  maxlength="256" placeholder="Can you please deposit on my half, i failed to make deposit at bank...">
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary"  style="width : 29em;" type="submit" [disabled]="!f.form.valid">
+          Make Appointment
+        </button>
+      </div>
+    </form>
+
+  
+  
+
+ </div>
