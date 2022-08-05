@@ -1,2 +1,46 @@
 <app-header></app-header>
 <app-back-button></app-back-button>
+
+<div class="example-container">
+
+
+    <div class="form-container ">
+        <div class="form-container-header">
+            <h2>Payment</h2>
+        </div>
+        <div class="form-container-body">
+      <form  *ngIf="!isSuccessful"
+      name="form"
+      (ngSubmit)="f.form.valid && depositToSameAccount()"
+      #f="ngForm"
+      novalidate >
+
+
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>From Account number</mat-label>
+        <input matInput   name="fromAccountNumber"
+        [(ngModel)]="form.fromAccountNumber"
+        required matInput  #fromAccountNumber="ngModel"  type="number" class="example-left-align" placeholder="0" autocomplete="off">
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>To Account number</mat-label>
+        <input matInput   name="toAccountNumber"
+        [(ngModel)]="form.toAccountNumber"
+        required matInput  #toAccountNumber="ngModel"  type="number" class="example-left-align" placeholder="0" autocomplete="off">
+      </mat-form-field>
+
+    
+        <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
+          <mat-label>Deposit Amount</mat-label>
+          <input name="amount" [(ngModel)]="form.amount"
+          required   #amount="ngModel"  matInput type="number" matInput placeholder="Deposit Amount" class="example-right-align" placeholder="0" autocomplete="off">
+          <span matPrefix>R&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+        
+        <button type="submit" mat-flat-button color="warn" style="width : 29em;">Pay</button>
+      </form>
+    </div>
+  </div>
+  

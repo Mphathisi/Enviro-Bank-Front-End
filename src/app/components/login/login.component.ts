@@ -57,13 +57,14 @@ export class LoginComponent implements OnInit {
                 if(x =="Admin"){
                   this.router.navigateByUrl("/admin")
                 }
-                else if(x == "user"){
+                else if(x == "User"){
                   this.router.navigateByUrl("/home")
                 }
           }
       },
       error: err => {
         this.errorMessage = err.error.message;
+        alert(this.errorMessage);
         this.isLoginFailed = true;
       }
       

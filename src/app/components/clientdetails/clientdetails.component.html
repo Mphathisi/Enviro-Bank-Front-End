@@ -5,7 +5,6 @@
 
 <div class="center">
 
-  id : {{user.id}}<br>
 
   <button mat-flat-button color="accent" (click)="me(user.id)">
     Click Me to get my details
@@ -70,6 +69,10 @@
         <mat-divider></mat-divider>
           <mat-list *ngFor="let bankaccount of user.bankAccounts">
             <mat-list-item>
+              <h4 matLine style="font-size: bold;">Account type: {{bankaccount.accountType}} <span></span></h4>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+            <mat-list-item>
                 <h4 matLine>Account Number : {{bankaccount.accountNumber}} <span></span></h4>
             </mat-list-item>
             <mat-divider></mat-divider>
@@ -78,7 +81,7 @@
             </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>
-              <h4 matLine>Branch : {{bankaccount.accountStatus}} <span></span></h4>
+              <h4 matLine>Account Status : {{bankaccount.accountStatus}} <span></span></h4>
             </mat-list-item>
             <mat-divider></mat-divider>
           </mat-list>

@@ -84,6 +84,11 @@ export class AccountComponent implements OnInit {
   }
 
 
+  logout() {
+    this.token.signOut();
+    this.router.navigate(['/']);
+  }
+
 }
 
  

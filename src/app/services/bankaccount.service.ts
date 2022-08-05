@@ -3,7 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Bankaccount } from '../models/bankaccount';
 import { BankStatements } from '../models/bankStatements';
+import { Deposit } from '../models/deposit';
 
+
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -55,5 +61,16 @@ export class BankaccountService {
   bankStatements(id: number): Observable<BankStatements>{
     return this.httpClient.get<BankStatements>(`${this.baseURL}/statement"/${id}`);
   }
+
+  
+  depositToSameUserAccount(fromAccountNumber: string,  toAccountNumber: string, amount:number): Observable<any> {
+    return this.httpClient.post(this.baseURL + '/depositToSameUserAccount', {
+      fromAccountNumber,
+      toAccountNumber,
+      amount,
+    }, httpOptions);
+  }
+
+
   
 }

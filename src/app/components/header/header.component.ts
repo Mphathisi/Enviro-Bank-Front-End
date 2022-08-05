@@ -51,6 +51,12 @@ export class HeaderComponent implements OnInit {
     roleAdminOrUser(): boolean {
       return this.token.getUser().role === 'admin' || this.token.getUser().role === 'user';
     }
+
+    logout() {
+      this.token.signOut();
+      window.location.reload();
+    }
+    
     
 
 
