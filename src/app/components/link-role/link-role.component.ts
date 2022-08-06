@@ -8,6 +8,7 @@ import {AuthService} from '../../services/auth.service';
 import {TokenStorageService} from '../../services/token-storage.service';
 import { UserService } from 'src/app/services/user.service';
 import { RoleService } from 'src/app/services/role.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -65,12 +66,14 @@ export class LinkRoleComponent implements OnInit {
     this.roleService.linkRole(this.form.userId , this.form.roleId).subscribe(
       data => {
         this.isSuccessful = true;
+        this.alertSuccess();
+        this.router.navigate(['/details/' + this.id]);
       }
       ,
       error => {
         this.isSuccessful = false;
-    
         this.errorMessage = error.error.message;
+        this.alertFailed();
       }
     );
   }
@@ -80,5 +83,24 @@ export class LinkRoleComponent implements OnInit {
       this.user = data;
       console.log(this.user);});
   }
+
+  alertSuccess(){
+    Swal.fire({
+      title: 'Success',
+      text: 'You have successfully linked the role to the user',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
+  }
+  alertFailed(){
+    Swal.fire({
+      title: 'Failed',
+      text: 'You have failed to link the role to the user',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    })
+  }
+
+
 
 }

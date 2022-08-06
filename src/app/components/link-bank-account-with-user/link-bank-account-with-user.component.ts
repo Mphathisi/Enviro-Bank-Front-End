@@ -8,7 +8,7 @@ import {AuthService} from '../../services/auth.service';
 import {TokenStorageService} from '../../services/token-storage.service';
 import { UserService } from 'src/app/services/user.service';
 import { BankaccountService } from 'src/app/services/bankaccount.service';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-link-bank-account-with-user',
@@ -44,8 +44,6 @@ export class LinkBankAccountWithUserComponent implements OnInit {
   
     ) {}
 
-  
-
   ngOnInit(): void {
 
     this.id = this.route.snapshot.params['id'];
@@ -56,18 +54,18 @@ export class LinkBankAccountWithUserComponent implements OnInit {
   }
 
   linkBankAccount(){
-
     this.userService.linkBankAccountWithUser(this.form.userId , this.form.accountNumber).subscribe( data => {
       console.log(data);
       this.isSuccessful = true;
-      alert("id: " + this.id);
+      this.isAddAccoountFailed = false;
+      this.alertSuccess(this.form.userId , this.form.accountNumber);
       this.router.navigate(['/details/' + this.id]);
 
     },
     err => {
       this.errorMessage = err.error.message;
       this.isAddAccoountFailed = true;
-      alert("error: " + this.errorMessage);
+      this.alertFailed();
       console.log(this.errorMessage);
     });
   }
@@ -78,6 +76,24 @@ export class LinkBankAccountWithUserComponent implements OnInit {
       this.user = data;
       console.log(this.user);});
   }
+
+  alertSuccess(userId: number, accountNumber: string){
+    Swal.fire({
+      title: 'Success!',
+      text: 'You have successfully linked the bank account with the user.',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
+  }
+  alertFailed(){
+    Swal.fire({
+      title: 'Failed!',
+      text: 'Failed to link the bank account with the user.',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    })
+  }
+
   
 
 

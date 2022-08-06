@@ -32,7 +32,8 @@
         </mat-form-field>
 
         <mat-form-field class="form-field"  appearance="fill" floatLabel="always">
-          <mat-label>account type</mat-label>
+          <mat-label>user id</mat-label>
+          <mat-hint>use{{userId}}</mat-hint>
           <input name="userId" [(ngModel)]="form.userId"
           required   #userId="ngModel"  matInput type="text" class="example-right-align" placeholder="0" autocomplete="off">
         </mat-form-field>

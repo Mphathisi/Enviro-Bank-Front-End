@@ -10,6 +10,8 @@ import {AuthService} from '../../services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-transfer',
@@ -76,6 +78,7 @@ export class TransferComponent implements OnInit {
     
 }
 
+
 deposit() {
   const {amount} = this.form;
   console.log(this.currentUser.accountNumber);
@@ -83,23 +86,42 @@ deposit() {
     data => {
       this.isSuccessful = true;
       this.isDepositFailed = false;
-      alert('Deposit successful' + "amount: " + amount);
-
+      this.alertSuccess(amount, this.bankaccount.accountNumber);
+      this
       this.errorMessage = '';
-     // this.router.navigate(['/bankaccount']);
+      this.router.navigate(['/home']);
     }
     , error => {
       this.isSuccessful = false;
       this.isDepositFailed = true;
       alert(error.error.message);
       this.errorMessage = error.error.message;
+      this.router.navigate(['/home']);
     }
   );
 
   }
+
+  alertSuccess(amount:number, accountNumber:string) {
+    Swal.fire({
+      icon: 'success',
+      title: 'You have succesfully deposited ' + amount + ' to ' + accountNumber,
+      showConfirmButton: false,
+      timer: 3500
+    })
+  }
+
+  alertError() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Failed...',
+      text: 'Deposit failed!',
+      footer: '<a href>Why do I have this issue?</a>'
+    })
+  }
+
   
 }
-
 
 
 

@@ -8,6 +8,7 @@ import {AuthService} from '../../services/auth.service';
 import {TokenStorageService} from '../../services/token-storage.service';
 import { UserService } from 'src/app/services/user.service';
 import { BankaccountService } from 'src/app/services/bankaccount.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addaccount',
@@ -51,8 +52,6 @@ export class AddaccountComponent implements OnInit {
   
     ) {}
 
-  
-
   ngOnInit(): void {
 
     this.id = this.route.snapshot.params['id'];
@@ -70,14 +69,15 @@ export class AddaccountComponent implements OnInit {
       this.isDepositAmountValid(this.form.depositAmount);
       this.isSuccessful = true;
       this.isAddAccoountFailed = false;
-      alert("id: " + this.id);
+      this.alertSuccess(this.form.depositAmount, this.form.accountNumber);
       this.router.navigate(['/users/' + this.id+ '/bankaccounts']);
       
     },
     err => {
       this.errorMessage = err.error.message;
       this.isAddAccoountFailed = true;
-      console.log(this.errorMessage);
+      this.isSuccessful = false;
+      this.alertFailed();
     });
   }
 
@@ -98,6 +98,25 @@ export class AddaccountComponent implements OnInit {
       this.bankaccount = data;
       console.log(this.bankaccount);});
   }
+
+  alertSuccess(amount: number, accountNumber: string) {
+    Swal.fire({
+      title: 'Success',
+      text: 'You have successfully deposited ' + amount + ' to ' + accountNumber,
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
+  }
+
+  alertFailed() {
+    Swal.fire({
+      title: 'Failed',
+      text: 'You have failed to deposit',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    })
+  }
+
 
 
 }

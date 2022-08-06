@@ -21,6 +21,7 @@ import { Bankaccount } from "../../models/bankaccount";
 import {BankaccountService} from "../../services/bankaccount.service";
 import {TokenStorageService} from "../../services/token-storage.service";
 import { BreakpointObserver } from '@angular/cdk/layout';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
 
@@ -103,6 +104,12 @@ export class AdminComponent implements OnInit {
     addAccount(): void {
       this._bottomSheet.open(AddaccountComponent, { panelClass: 'custom-width' });
     }
+
+    tinyAlert() {
+      Swal.fire('Hey there!');
+    }
+    
   
+
 
 }

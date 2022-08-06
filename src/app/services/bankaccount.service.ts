@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class BankaccountService {
 
-  private baseURL = "http://localhost:8080/api/v1";
+  private baseURL = "https://envirobank.herokuapp.com/api/v1";
 
   constructor(private httpClient: HttpClient) { }
   
@@ -70,6 +70,7 @@ export class BankaccountService {
       amount,
     }, httpOptions);
   }
+
 
 
   

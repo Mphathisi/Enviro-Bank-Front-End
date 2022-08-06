@@ -9,6 +9,7 @@ import { BankaccountService} from '../../services/bankaccount.service'
 import {AuthService} from '../../services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-payment',
@@ -43,9 +44,6 @@ export class PaymentComponent implements OnInit {
   }
 
 
-
-
-
   depositToSameAccount() {
     
     const {fromAccountNumber, toAccountNumber, amount} = this.form;
@@ -56,18 +54,36 @@ export class PaymentComponent implements OnInit {
         console.log("fromAccountNumber", fromAccountNumber);
         console.log("toAccountNumber", toAccountNumber);
         console.log("amount", amount);
-        alert('Deposit successful' + "amount: " + amount);
+        this.alertDepositSuccessful(amount, fromAccountNumber, toAccountNumber);
         this.errorMessage = '';
-       // this.router.navigate(['/bankaccount']);
+       this.router.navigate(['/home']);
       }
       , error => {
         this.isSuccessful = false;
         this.isDepositFailed = true;
-        alert(error.error.message);
+        this.alertDepositFailed(error.error.message);
         this.errorMessage = error.error.message;
       }
     );
   }
+
+  alertDepositSuccessful(amount: number , fromAccountNumber: string , toAccountNumber: string) {
+    Swal.fire({
+      title: 'Deposit Successful',
+      text: 'You have deposited ' + amount + ' to account ' + toAccountNumber,
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
+  }
+  alertDepositFailed(errorMessage: string) {
+    Swal.fire({
+      title: 'Deposit Failed',
+      text: errorMessage,
+      icon: 'error',
+      confirmButtonText: 'OK'
+    })
+  }
+
 
     
 

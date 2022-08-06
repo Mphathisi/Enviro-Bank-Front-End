@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { User} from '../../models/user'
 import { AuthService } from '../../services/auth.service';
 import { TokenStorageService } from '../../services/token-storage.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -39,13 +40,16 @@ export class ChangepasswordComponent implements OnInit {
     this.authService.changePassword(this.currentUser.email, oldPassword,  password).subscribe({
       next: data => {
         this.isSuccessful = true;
+        this.alertSuccess();
         this.router.navigate(['/account']);
       },
       error: err => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
+        this.alertFailed();
       }
     });
+
  
     console.log('User: ', this.form);
   }
@@ -60,6 +64,23 @@ export class ChangepasswordComponent implements OnInit {
       newpassword: ['', [Validators.required, Validators.minLength(6)]],
     });
     
+  }
+
+  alertSuccess() {
+    Swal.fire({
+      title: 'Success',
+      text: 'Password changed successfully',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
+  }
+  alertFailed() {
+    Swal.fire({
+      title: 'Failed',
+      text: 'Password change failed',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    })
   }
       
 

@@ -3,6 +3,7 @@ import {MatDialog , MatDialogRef} from '@angular/material/dialog';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-newclient',
@@ -39,12 +40,13 @@ export class NewclientComponent implements OnInit {
 
     this.authService.register(name, surname, idNumber, email).subscribe({
       next: data => {
-        console.log(data);
+        this.alertNewClientAdded();
         this.isSuccessful = true;
         this.isSignUpFailed = false;
       },
       error: err => {
         this.errorMessage = err.error.message;
+        this.alertFailed();
         this.isSignUpFailed = true;
       }
     });
@@ -62,6 +64,24 @@ export class NewclientComponent implements OnInit {
     });
     
   }
+
+  alertNewClientAdded(){
+    Swal.fire({
+      title: 'New Client Added',
+      text: 'New Client has been added successfully',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
+  }
+  alertFailed(){
+    Swal.fire({
+      title: 'Failed',
+      text: 'Failed to add new client',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    })
+  }
+  
     
 
 
